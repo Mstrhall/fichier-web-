@@ -1,0 +1,201 @@
+/* appliquer une couleur de fond à la page */
+body {
+    background-color: #ffffff;
+    margin: 40px;
+}
+
+/* appliquer une couleur aux titres */
+h1, h2, h3 {
+    color: #4B99FE;
+    text-align: center;
+}
+
+/* appliquer un style aux div contenant les encarts */
+.lab-info {
+    background-color: #c5c0c0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin: 40px;
+}
+
+/* ajouter de la pagination */
+@media print {
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+}
+
+/* Style pour le menu */
+nav {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    display: block;
+    padding: 10px 15px;
+    color: #4b99fe;
+    text-decoration: none;
+    border: 2px solid #4b99fe;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #4b99fe;
+    color: #fff;
+}
+
+/* Style pour le footer */
+footer {
+    background-color: #c2b280;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+img {
+    border-radius: 10px;
+    border: 3px solid #c5c0c0;
+    display: block;
+    margin: auto;
+}
+
+/* Style pour le slideshow */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.mySlides {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    opacity: 0;
+    transition: transform 1s ease-in-out;
+}
+
+.mySlides.active {
+    opacity: 1;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    margin-top: 230px;
+    width: auto;
+    padding: 16px;
+    color: #8B8589;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 3s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Slideshow container */
+
+
+/* Container for the dots */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots */
+.dot {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+}
+
+/* Active dot or hovered dot */
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slides */
+
+
+/* Center the image inside the slide */
+
+
+/* Previous and Next buttons */
+.prev, .next {
+    color: #8B8589;
+}
+
+.slideshow-container {
+    text-align: center;
+}
+
+.mySlides img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+}
