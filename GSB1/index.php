@@ -13,8 +13,11 @@ elseif($_GET["action"]=="MEDOC")
 elseif($_GET["action"]=="ACTIVITE")
     appelACTIVITE();
 
-elseif($_GET["action"]=="pageEffets")
+elseif($_GET["action"]=="pageEffets"){
+    $idMedoc = $_GET['idMedoc'];
+    $nomMedoc = $_GET['nomMedoc'];
     appelEffets();
+}
 
 elseif($_GET["action"]=="pageReserver")
 {

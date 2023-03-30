@@ -51,7 +51,7 @@ plus bas vous serez en capacité de voir quel médicament est contre-indiqué ma
     <tr>
         <td><?php echo $medicament[0]; ?></td>
         <td><?php echo $medicament[1]; ?></td>
-        <td><a href="index.php?action=pageEffets">Effets</a></td>
+        <td><a href="index.php?action=pageEffets&idMedoc=<?php echo $medicament[0];?>&nomMedoc=<?php echo $medicament[1];?>">Effets</a></td>
     </tr>
     <?php endforeach;?>
     <!-- Ajoutez autant de lignes que nécessaire -->

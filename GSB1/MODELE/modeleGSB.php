@@ -65,16 +65,15 @@ function getparticipant($uneAdresse){
     
     return $res;
 }
-function geteffesecondaire($iddumedoc)
+function get_effet_secondaire($iddumedoc)
 {
     $parameters=array('unIdMedoc'=>$iddumedoc);
     $client=init();
     $res=$client->select_effets_secondaire($parameters);
     $lesRes=$res->select_effets_secondaireResult->string;
     $tab=array();
-    for($i=0;$i<4;$i++){
-       // $tab[$i]=explode(";",$lesRes[$i]);
-        $tab[$i]=$i;
+    for($i=0;$i<sizeof($tab);$i++){
+       $tab[$i]=explode(";",$lesRes[$i]);
     }
     return $tab;
 }
@@ -83,11 +82,10 @@ function geteffetherapeutique($iddumedoc)
     $parameters=array('unIdMedoc'=>$iddumedoc);
     $client=init();
     $res=$client->select_effets_therapeutiques($parameters);
-    $lesRes=$res->select_effets_therapeutiquesResponse->string;
+    $lesRes=$res->select_effets_therapeutiquesResult->string;
     $tab=array();
-    for($i=0;$i<4;$i++){
-        //$tab[$i]=explode(";",$lesRes[$i]);
-        $tab[$i]=$i;
+    for($i=0;$i<sizeof($tab);$i++){
+        $tab[$i]=explode(";",$lesRes[$i]);
     }
     return $tab;
 }

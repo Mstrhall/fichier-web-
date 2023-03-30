@@ -44,8 +44,9 @@ function traitementParticipant(){
 
  }
 function appelEffets(){
-    $effetsSecond=geteffetsecondaire();
-    $effetsTerap=select_effets_therapeutiques();
+    $effetsSecond=get_effet_secondaire($_GET['idMedoc']);
+    $effetsTerap=geteffetherapeutique($_GET['idMedoc']);
+    $nomMedoc=$_GET['nomMedoc'];
     require_once "VUE/effets.php";
 }
 
@@ -59,12 +60,12 @@ function verifparticipant($sontadresse){
     return $verifparticipant;
 }
 function  getEffetsecondaire($iddumedoc){
-    $medicament=geteffesecondaire($iddumedoc);
-    return$medicament;
+    $effetSecond=get_effet_secondaire($iddumedoc);
+    return$effetSecond;
 }
 function getEfftherapeutique($iddumedoc){
-    $medicament=geteffetherapeutique($iddumedoc);
-    return $medicament;
+    $effetTherap=geteffetherapeutique($iddumedoc);
+    return $effetTherap;
 }
 
 function insertparticipants($nom,$prenom,$adresse,$num){
