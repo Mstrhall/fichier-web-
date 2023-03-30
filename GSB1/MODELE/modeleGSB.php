@@ -79,14 +79,28 @@ function get_effet_secondaire($iddumedoc)
 }
 function geteffetherapeutique($iddumedoc)
 {
-    $parameters=array('unIdMedoc'=>$iddumedoc);
+    /*
+    $client=init();
+    $res=$client->select_activites();
+    $lesRes=$res->select_activitesResult->string;
+    $tab=array();
+  for ($i=0;$i<sizeof($lesRes);$i++){
+     $tab[$i]=explode(";",$lesRes[$i]);
+     
+    }
+    return $tab;
+*/
+
+    $parameters=$iddumedoc;
+    var_dump($parameters); 
     $client=init();
     $res=$client->select_effets_therapeutiques($parameters);
     $lesRes=$res->select_effets_therapeutiquesResult->string;
     $tab=array();
-    for($i=0;$i<sizeof($tab);$i++){
+    for($i=0;$i<sizeof($lesRes);$i++){
         $tab[$i]=explode(";",$lesRes[$i]);
     }
+    var_dump($tab); 
     return $tab;
 }
 
