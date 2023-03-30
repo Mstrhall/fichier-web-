@@ -31,24 +31,19 @@ function getMedicaments()
     for ($i = 0; $i < 3; $i++) {
         $tab[$i] = explode(";", $lesRes[$i]);
     }
-    var_dump($tab);
+    return $tab;
 }
 
 function getActivite()
 {
-    //$client=init();
-   // $res=$client->select_activites();
-    //$lesRes=$res->select_activitesResult->string;
-    //$tab=array();
-  //  for ($i=0;$i<4;$i++){
-       // $tab[$i]=explode(";",$lesRes[$i]);
-       // $tab[$i]=$i;
-
-   // }
-    $tab = [
-        [1, 2, 4, 8, 16],
-        [1, 3, 9, 27, 81]
-    ];
+    $client=init();
+    $res=$client->select_activites();
+    $lesRes=$res->select_activitesResult->string;
+    $tab=array();
+  for ($i=0;$i<sizeof($lesRes);$i++){
+     $tab[$i]=explode(";",$lesRes[$i]);
+     
+    }
     return $tab;
 }
 
@@ -93,6 +88,7 @@ function geteffetherapeutique($iddumedoc)
     }
     return $tab;
 }
+
 function insertparticipant($lenom,$leprenom,$ladresse,$lenum)
 {
     $parameters=array('unNom'=>$lenom,'unPrenom'=>$leprenom,'uneAdresse'=>$ladresse,'unNum'=>$lenum);
@@ -100,7 +96,7 @@ function insertparticipant($lenom,$leprenom,$ladresse,$lenum)
     $res=$client->select_effets_therapeutiques($parameters);
     $lesRes=$res->insert_participantResponse;
 
-    echo "j'ai bien inserer le partcipant :",$lenom;
+    echo "j'ai bien inserer le partcipant :".$lenom;
 }
 
 function insertpartciper($idactiviter,$idparticpant)
@@ -110,5 +106,6 @@ function insertpartciper($idactiviter,$idparticpant)
     $res=$client->insert_participer($parameters);
     $lesRes=$res->insert_participerResponse;
 
-    echo$lesRes;
+    echo $lesRes;
 }
+?>

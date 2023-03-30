@@ -42,9 +42,9 @@
     <tbody>
     <?php foreach ($activites as $activite): ?>
     <tr>
+        <td><?php echo $activite[0]; ?></td>
         <td><?php echo $activite[1]; ?></td>
-        <td><?php echo $activite[2]; ?></td>
-        <td><input type="link" name="complet" value= <a href="index.php?action=pageComplet">complet/></td>
+        <td><a href="index.php?action=pageReserver&idAct=$activite[0]">Reserver</a></td>
     </tr>
     <?php endforeach;?>
     <!-- Ajoutez autant de lignes que nécessaire -->

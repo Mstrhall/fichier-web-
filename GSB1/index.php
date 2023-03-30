@@ -12,3 +12,9 @@ elseif($_GET["action"]=="MEDOC")
 
 elseif($_GET["action"]=="ACTIVITE")
     appelACTIVITE();
+
+elseif($_GET["action"]=="pageEffets")
+    appelEffets();
+
+elseif($_GET["action"]=="pageReserver")
+    appelReserver();

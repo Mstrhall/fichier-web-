@@ -12,12 +12,25 @@ function appelMEDOC(){
 
 function appelACTIVITE(){
     $activites=getActivite();
-    require_once "VUE/activité.php";
+    require_once "VUE/activite.php";
 
 }
 
+function appelReserver(){
+    $idAct=$_GET['idAct'];
+    getVerfiParticipant($idAct);
+    require_once "VUE/reserver.php";
+
+}
+
+function appelEffets(){
+    $effetsSecond=geteffetsecondaire();
+    $effetsTerap=select_effets_therapeutiques();
+    require_once "VUE/effets.php";
+}
+
 function appelDetailActivite(){
-    $activite=getVerifParticipant()
+    $activite=getVerifParticipant();
 }
 
 function verifparticipant($sontadresse){
@@ -38,7 +51,7 @@ function insertparticipants($nom,$prenom,$adresse,$num){
     insertparticipant($nom,$prenom,$adresse,$num);
 }
 
-function insertParticiper($idActviter,$idParticiper){
+function insertparticiper($idActviter,$idParticiper){
     insertParticiper($idActviter,$idParticiper);
 
 }
