@@ -17,12 +17,32 @@ function appelACTIVITE(){
 }
 
 function appelReserver(){
-    $idAct=$_GET['idAct'];
-    getVerfiParticipant($idAct);
-    require_once "VUE/reserver.php";
-
+   // $idAct=$_GET['idAct'];
+    require_once "VUE/reserver.php";   
 }
 
+function traitementParticipant(){
+    session_start();
+   $adresse=$_POST['email'];
+  
+
+  /*  $ParticipExist=getVerifParticipant($adresse);
+     var_dump($ParticipExist);
+    if($ParticipExist){
+        $_SESSION['idParticipant']=getparticipant($adresse);
+        insertpartciper($idAct,$idParticipant);
+    }
+
+    else{*/
+        insertparticipant($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['tel']);
+        $idParticipant=getparticipant($adresse);
+        insertpartciper($_POST['idAct'],$idParticipant);
+  //  }
+    
+    //$idParticipant=getpartcipant($adresse);
+    
+
+ }
 function appelEffets(){
     $effetsSecond=geteffetsecondaire();
     $effetsTerap=select_effets_therapeutiques();
@@ -52,6 +72,7 @@ function insertparticipants($nom,$prenom,$adresse,$num){
 }
 
 function insertparticiper($idActviter,$idParticiper){
-    insertParticiper($idActviter,$idParticiper);
+    session_start();
+   // insertParticiper($idActviter,$_SESSION['idParticipant']);
 
 }

@@ -27,23 +27,20 @@
     </div>
 </div>
 <h1>Reste t'il des places </h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
 
-    </tr>
-    </thead>
+    <form method="POST" action="index?action=ajoutParticip">
+        <input type="hidden" name="idAct" value="<?php echo $_GET['idAct'];?>">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
 
-    <tbody>
-    <?php foreach ($activites as $activite): ?>
-        <tr>
-            <td><?php echo $activite[1]; ?></td>
-            <td><?php echo $activite[2]; ?></td>
-            <td><input type="link" name="complet" value= <a href="index.php?action=pageComplet">complet/></td>
-        </tr>
-    <?php endforeach;?>
-    <!-- Ajoutez autant de lignes que nécessaire -->
-    </tbody>
-</table>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="tel">Numéro de téléphone :</label>
+        <input type="tel" id="tel" name="tel" required><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>

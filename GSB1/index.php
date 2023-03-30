@@ -17,4 +17,12 @@ elseif($_GET["action"]=="pageEffets")
     appelEffets();
 
 elseif($_GET["action"]=="pageReserver")
-    appelReserver();
+{
+     $idAct = $_GET["idAct"];   
+     appelReserver();
+}
+
+elseif($_GET["action"]=="ajoutParticip")
+{
+  
+    traitementParticipant();}

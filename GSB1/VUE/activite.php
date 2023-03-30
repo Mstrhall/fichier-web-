@@ -44,7 +44,7 @@
     <tr>
         <td><?php echo $activite[0]; ?></td>
         <td><?php echo $activite[1]; ?></td>
-        <td><a href="index.php?action=pageReserver&idAct=$activite[0]">Reserver</a></td>
+        <td><a href="index.php?action=pageReserver&idAct=<?php echo $activite[0]; ?>">Reserver</a></td>
     </tr>
     <?php endforeach;?>
     <!-- Ajoutez autant de lignes que nécessaire -->

@@ -48,19 +48,22 @@ function getActivite()
 }
 
 
-function getVerifParticipant($ladresse)
+function getVerifParticipant($uneAdresse)
 {
-    $parameters=array('uneAdresse'=>$ladresse);
+    $parameters=$uneAdresse;
     $client=init();
     $res=$client->verifParticipant($parameters);
-    $lesRes=$res->verifParticipantResult;//possibilité de rajouter fleche boolean
-    $tab=array();
-    for ($i=0;$i<4;$i++){
-       // $tab[$i]=explode(";",$lesRes[$i]);
-        $tab[$i]=$i;
-    }
-    return $tab;
-
+    $res=$res->verifParticipantResult;//possibilité de rajouter fleche boolean
+    var_dump($res);
+    return $res;
+}
+function getparticipant($uneAdresse){
+    $parameters=array('adresseemail'=>$uneAdresse);
+    $client=init();
+    $res=$client->select_paticipant($parameters);
+    $res=$res->select_paticipantResult;//possibilité de rajouter fleche boolean
+    
+    return $res;
 }
 function geteffesecondaire($iddumedoc)
 {
@@ -93,19 +96,21 @@ function insertparticipant($lenom,$leprenom,$ladresse,$lenum)
 {
     $parameters=array('unNom'=>$lenom,'unPrenom'=>$leprenom,'uneAdresse'=>$ladresse,'unNum'=>$lenum);
     $client=init();
-    $res=$client->select_effets_therapeutiques($parameters);
-    $lesRes=$res->insert_participantResponse;
+    $res=$client->insert_participant($parameters);
+   // $lesRes=$res->insert_participantResponse;
 
-    echo "j'ai bien inserer le partcipant :".$lenom;
+//    echo "j'ai bien inserer le partcipant :".$lenom;
 }
 
 function insertpartciper($idactiviter,$idparticpant)
 {
-    $parameters=array('unIdAct'=>$idactiviter,'unIdPartip'=>$idparticpant);
+    $parameters=array('unIdAct'=>$idactiviter,'unIdparticipant'=>$idparticpant);
     $client=init();
     $res=$client->insert_participer($parameters);
-    $lesRes=$res->insert_participerResponse;
+   // $lesRes=$res->insert_participerResponse;
 
-    echo $lesRes;
+  //  echo $lesRes;
 }
+
+
 ?>
