@@ -1,7 +1,7 @@
 <?php
 function init()
 {
-    $url = 'https://localhost:44382/WebService1.asmx?WSDL';
+    $url = 'https://localhost:44306//WebService1.asmx?WSDL';
 
     $option = array(
         'cache_wsdl' => 0,
@@ -65,14 +65,17 @@ function getparticipant($uneAdresse){
 
     return $res;
 }
+
+
+
 function get_effet_secondaire($iddumedoc)
 {
-    $parameters=array('unIdMedoc'=>$iddumedoc);
+ $parameters=array('unIdMedoc'=>$iddumedoc);
     $client=init();
     $res=$client->select_effets_secondaire($parameters);
     $lesRes=$res->select_effets_secondaireResult->string;
     $tab=array();
-    for($i=0;$i<sizeof($lesRes);$i++){
+    for($i=0;$i<14;$i++){
         $tab[$i]=explode(";",$lesRes[$i]);
     }
     return $tab;
@@ -80,13 +83,19 @@ function get_effet_secondaire($iddumedoc)
 
 function geteffetherapeutique($iddumedoc)
 {
-  
-   $parameters=array('unIdMedoc'=>$iddumedoc);
-      $client=init();
+
+
+    $parameters=array('unIdMedoc'=>$iddumedoc);
+    $client=init();
     $res=$client->select_effets_therapeutiques($parameters);
-    $lesRes=$res->select_effets_therapeutiquesResult->string;
-	    $tab=array();
-    for($i=0;$i<sizeof($lesRes);$i++){
+    $lesRes=array();
+   
+    $break=$res->select_effets_therapeutiquesResult->string;
+    $lesRes=$break;
+     var_dump($lesRes);
+         
+
+   for ($i = 0; $i < $lesRes; $i++) {
         $tab[$i]=explode(";",$lesRes[$i]);
     }
      return $tab;
