@@ -1,7 +1,7 @@
 <?php
 function init()
 {
-    $url = 'https://localhost:44306/WebService1.asmx?WSDL';
+    $url = 'https://localhost:44382/WebService1.asmx?WSDL';
 
     $option = array(
         'cache_wsdl' => 0,
@@ -40,9 +40,9 @@ function getActivite()
     $res=$client->select_activites();
     $lesRes=$res->select_activitesResult->string;
     $tab=array();
-  for ($i=0;$i<sizeof($lesRes);$i++){
-     $tab[$i]=explode(";",$lesRes[$i]);
-     
+    for ($i=0;$i<sizeof($lesRes);$i++){
+        $tab[$i]=explode(";",$lesRes[$i]);
+
     }
     return $tab;
 }
@@ -62,7 +62,7 @@ function getparticipant($uneAdresse){
     $client=init();
     $res=$client->select_paticipant($parameters);
     $res=$res->select_paticipantResult;//possibilité de rajouter fleche boolean
-    
+
     return $res;
 }
 function get_effet_secondaire($iddumedoc)
@@ -72,36 +72,24 @@ function get_effet_secondaire($iddumedoc)
     $res=$client->select_effets_secondaire($parameters);
     $lesRes=$res->select_effets_secondaireResult->string;
     $tab=array();
-    for($i=0;$i<sizeof($tab);$i++){
-       $tab[$i]=explode(";",$lesRes[$i]);
-    }
-    return $tab;
-}
-function geteffetherapeutique($iddumedoc)
-{
-    /*
-    $client=init();
-    $res=$client->select_activites();
-    $lesRes=$res->select_activitesResult->string;
-    $tab=array();
-  for ($i=0;$i<sizeof($lesRes);$i++){
-     $tab[$i]=explode(";",$lesRes[$i]);
-     
-    }
-    return $tab;
-*/
-
-    $parameters=$iddumedoc;
-    var_dump($parameters); 
-    $client=init();
-    $res=$client->select_effets_therapeutiques($parameters);
-    $lesRes=$res->select_effets_therapeutiquesResult->string;
-    $tab=array();
     for($i=0;$i<sizeof($lesRes);$i++){
         $tab[$i]=explode(";",$lesRes[$i]);
     }
-    var_dump($tab); 
     return $tab;
+}
+
+function geteffetherapeutique($iddumedoc)
+{
+  
+   $parameters=array('unIdMedoc'=>$iddumedoc);
+      $client=init();
+    $res=$client->select_effets_therapeutiques($parameters);
+    $lesRes=$res->select_effets_therapeutiquesResult->string;
+	    $tab=array();
+    for($i=0;$i<sizeof($lesRes);$i++){
+        $tab[$i]=explode(";",$lesRes[$i]);
+    }
+     return $tab;
 }
 
 function insertparticipant($lenom,$leprenom,$ladresse,$lenum)
@@ -109,7 +97,7 @@ function insertparticipant($lenom,$leprenom,$ladresse,$lenum)
     $parameters=array('unNom'=>$lenom,'unPrenom'=>$leprenom,'uneAdresse'=>$ladresse,'unNum'=>$lenum);
     $client=init();
     $res=$client->insert_participant($parameters);
-   // $lesRes=$res->insert_participantResponse;
+    // $lesRes=$res->insert_participantResponse;
 
 //    echo "j'ai bien inserer le partcipant :".$lenom;
 }
@@ -119,9 +107,9 @@ function insertpartciper($idactiviter,$idparticpant)
     $parameters=array('unIdAct'=>$idactiviter,'unIdparticipant'=>$idparticpant);
     $client=init();
     $res=$client->insert_participer($parameters);
-   // $lesRes=$res->insert_participerResponse;
+    // $lesRes=$res->insert_participerResponse;
 
-  //  echo $lesRes;
+    //  echo $lesRes;
 }
 
 
