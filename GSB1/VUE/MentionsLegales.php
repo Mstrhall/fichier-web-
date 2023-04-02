@@ -71,8 +71,9 @@ GSB s'engage à vérifier que le contenu de ce site est conforme aux disposition
     <br><br> <h4> Protection des données nominatives</h4><br>
     Aucune donnée personnelle n'est collectée à votre insu. Le Groupe GSB est amené à collecter des informations anonymes, telles que les recherches que vous effectuez. Ces informations ne sont utilisées qu'à des fins statistiques. Toutefois, vous pourrez être amené à communiquer des données nominatives. Celles-ci ne pourront être transmises à des tiers sans votre autorisation préalable. Conformément à la loi Informatique et Libertés du 6 Janvier 1978, vous disposez par ailleurs du droit d'accès, de modification, de rectification et de suppression des données vous concernant auprès de l'éditeur du site. Internet étant un réseau ouvert, le Groupe GSB ne peut garantir que ces données ne seront pas détournées par des tiers. Droit applicable & Tribunaux compétents<br>
 
-</div>
+
 </body>
+</div>
 <footer>
     <div class="container">
         <div class="row">
@@ -84,16 +85,23 @@ GSB s'engage à vérifier que le contenu de ce site est conforme aux disposition
             </div>
             <div class="col-md-6">
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/celian-laumond-595801234/">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1024px-LinkedIn_Logo.svg.png" alt="Logo LinkedIn 1" width="30">
-                        <span>CELIAN LAUMOND </span>
+                    <a href="https://www.linkedin.com/in/celian-laumond-595801234/" target="_blank">
+                        <div class="circle-image">
+                            <img src="VUE/celian.jfif" alt="Profil Celian Laumond">
+                        </div>
+                        <span>CELIAN LAUMOND</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/théo-gardais-aa5826242/">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1024px-LinkedIn_Logo.svg.png" alt="Logo LinkedIn 2" width="30">
+                    <a href="https://www.linkedin.com/in/théo-gardais-aa5826242/" target="_blank">
+                        <div class="circle-image">
+                            <img src="VUE/theo.jfif" alt="Profil Théo Gardais">
+                        </div>
                         <span>THEO GARDAIS</span>
                     </a>
                 </div>
             </div>
+
         </div>
+    </div>
+
 </footer>
 </html>

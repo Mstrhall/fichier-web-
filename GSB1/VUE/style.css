@@ -1,16 +1,16 @@
-/* appliquer une couleur de fond à la page */
+/* Appliquer une couleur de fond à la page */
 body {
     background-color: #ffffff;
     margin: 40px;
 }
 
-/* appliquer une couleur aux titres */
+/* Appliquer une couleur aux titres */
 h1, h2, h3 {
     color: #4B99FE;
     text-align: center;
 }
 
-/* appliquer un style aux div contenant les encarts */
+/* Appliquer un style aux div contenant les encarts */
 .lab-info {
     background-color: #c5c0c0;
     border-radius: 10px;
@@ -19,7 +19,7 @@ h1, h2, h3 {
     margin: 40px;
 }
 
-/* ajouter de la pagination */
+/* Ajouter de la pagination */
 @media print {
     .page-break {
         display: block;
@@ -63,6 +63,9 @@ nav a:hover {
 
 /* Style pour le footer */
 footer {
+
+    bottom: 0;
+    width: 100%;
     background-color: #c2b280;
     color: #fff;
     padding: 20px 0;
@@ -71,13 +74,7 @@ footer {
     font-weight: bold;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
+/* Style pour les images */
 img {
     border-radius: 10px;
     border: 3px solid #c5c0c0;
@@ -136,17 +133,23 @@ img {
 }
 
 
-/* Slideshow container */
+/* Conteneur de diaporama */
+.slideshow-container {
+    text-align: center;
+}
 
-
-/* Container for the dots */
+/* Conteneur pour les points */
 .dot-container {
     text-align: center;
     padding: 20px;
     background: #ddd;
 }
 
-/* The dots */
+.text-center {
+    text-align: center;
+}
+
+/* Les points */
 .dot {
     display: inline-block;
     cursor: pointer;
@@ -157,13 +160,13 @@ img {
     background-color: #bbb;
 }
 
-/* Active dot or hovered dot */
+/* Point actif ou point survolé */
 .active,
 .dot:hover {
     background-color: #717171;
 }
 
-/* Fade animation */
+/* Animation de fondu */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -178,24 +181,43 @@ img {
     }
 }
 
-/* Slides */
-
-
-/* Center the image inside the slide */
-
-
-/* Previous and Next buttons */
-.prev, .next {
-    color: #8B8589;
-}
-
-.slideshow-container {
-    text-align: center;
-}
-
+/* Diapositives */
 .mySlides img {
     display: block;
     margin: 0 auto;
     max-width: 50%;
     height: auto;
+}
+
+/* Boutons précédent et suivant */
+.prev, .next {
+    color: #8B8589;
+}
+
+/* Liens sociaux */
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Image de cercle */
+.circle-image {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.circle-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.mention {
+    border: 2px solid #a99e87;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f3eada;
 }

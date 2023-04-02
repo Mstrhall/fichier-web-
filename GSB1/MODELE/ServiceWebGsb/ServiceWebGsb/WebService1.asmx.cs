@@ -28,13 +28,13 @@ namespace ServiceWebGsb
         [WebMethod]
         public String[] select_effets_secondaire(int unIdMedoc)
         {
-            string connectionString = "server=localhost;database=gsb;user=root;password='';";
+            string connectionString = "server=localhost;database=GSB;user=root;password='';";
 
            
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT * " + " FROM effets_secondaires JOIN entrainer_second ON  effets_secondaires.id = entrainer_second.id_effet WHERE id_medoc = @idMedoc";
+                    string query = "SELECT * " + "  FROM effets_secondaires JOIN entrainer_second ON effets_secondaires.id = entrainer_second.id_effet WHERE entrainer_second.id_medicament =  @idMedoc;";
                     List<String> lesEffets = new List<String>();
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -60,7 +60,7 @@ namespace ServiceWebGsb
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT * " + " FROM effets_therapeutiques JOIN entrainer_therap ON  effets_therapeutiques.id = entrainer_therap.id_effet WHERE id_medoc = @idMedoc";
+                string query = "SELECT * " + " FROM effets_therapeutiques JOIN entrainer_thérap ON effets_therapeutiques.id = entrainer_thérap.id_effet WHERE entrainer_thérap.id_medicament = @idMedoc;";
                 List<String> lesEffets = new List<String>();
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {

@@ -1,0 +1,144 @@
+/* Style pour le texte centré avec une couleur spécifique */
+.text-centrer {
+    color: #4B99FE;
+    text-align: center;
+}
+
+/* Style pour centrer un élément dans son conteneur */
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+/* Style pour un formulaire */
+form {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les champs texte, email et téléphone */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+/* Style pour le bouton de soumission du formulaire */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style pour le survol du bouton de soumission du formulaire */
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+    text-align: center
+}
+
+/* Style pour une table personnalisée */
+table.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 18px;
+    margin: 70px auto; /* Ajout des marges */
+}
+
+/* Style pour les en-têtes de colonne et de ligne */
+table.custom-table th,
+table.custom-table td {
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+/* Style pour l'en-tête de colonne */
+table.custom-table th {
+    background-color: #428bca;
+    color: #fff;
+}
+
+/* Style pour l'en-tête de la table */
+thead {
+    background-color: #4F83CC;
+    color: #fff;
+}
+
+/* Style pour les cellules */
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style pour la première colonne et ligne */
+th:first-child,
+td:first-child {
+    border-left: 1px solid #ddd;
+}
+
+/* Style pour la dernière colonne et ligne */
+th:last-child,
+td:last-child {
+    border-right: 1px solid #ddd;
+}
+
+/* Style pour l'en-tête */
+th {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+/* Style pour les lignes impaires */
+tr:nth-child(even) {
+    background-color: #F2F9FF;
+}
+
+/* Style pour le survol des lignes */
+tr:hover {
+    background-color: #E4EEF4;
+    cursor: pointer;
+}
+
+/* Style pour les liens */
+a {
+    color: #4F83CC;
+    text-decoration: none;
+}
+
+/* Style pour le survol des liens */
+a:hover {
+
+    color: #004E98;
+    text-decoration: underline;
+}
+/* Style pour la table */
+table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+/* Style pour le footer*/
+footer {
+    margin-top: auto;
+}
