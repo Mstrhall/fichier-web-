@@ -50,6 +50,27 @@ function getActivite()
     }
     return $tab; // Renvoie le tableau des activités avec leurs informations
 }
+function countChercheur()
+{
+    $client=init(); // Initialise le client Soap
+
+    $res=$client->CountChercheur(); // Appelle la méthode "select_activites" du service web
+    $lesRes=$res->CountChercheurResult;
+    return $lesRes;
+}
+function getChercheur()
+{
+    $client=init(); // Initialise le client Soap
+
+    $res=$client->select_Chercheur(); // Appelle la méthode "select_activites" du service web
+    $lesRes=$res->select_chercheurResult->string; // Récupère les résultats de la méthode appelée sous forme de tableau de chaînes de caractères
+    $tab=array();
+
+    for ($i=0;$i<sizeof($lesRes);$i++){ // Pour chaque résultat
+        $tab[$i]=explode(";",$lesRes[$i]); // Sépare chaque chaîne de caractères en utilisant le séparateur ";"
+    }
+    return $tab; // Renvoie le tableau des activités avec leurs informations
+}
 
 // Fonction pour vérifier la participation d'un utilisateur
 function getVerifParticipant($uneAdresse)
@@ -117,5 +138,6 @@ function insertpartciper($idactiviter, $idparticpant)
 
     // echo $lesRes;
 }
+
 
 ?>

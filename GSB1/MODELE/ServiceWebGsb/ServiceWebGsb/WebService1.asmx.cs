@@ -111,7 +111,7 @@ namespace ServiceWebGsb
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT * " + " FROM medicaments";
+                string query = "SELECT * " + " FROM activites";
                 List<String> lesMedicaments = new List<String>();
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -128,6 +128,52 @@ namespace ServiceWebGsb
 
         }
         [WebMethod]
+        public String[] select_chercheur()
+        {
+            string connectionString = "server=localhost;database=gsb;user=root;password='';";
+
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * " + " FROM chercheur";
+                List<String> lesMedicaments = new List<String>();
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        String unChercheur= Convert.ToInt16(dataReader["id"]) + ";" + Convert.ToString(dataReader["nom"]);
+                        lesMedicaments.Add(unChercheur);
+                    }
+                }
+                connection.Close();
+                return lesMedicaments.ToArray();
+            }
+
+        }
+        [WebMethod]
+        public int CountChercheur()
+        {
+            string connectionString = "server=localhost;database=gsb;user=root;password='';";
+            int nb;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(id) FROM chercheur";
+                List<string> result = new List<string>();
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    nb=Convert.ToInt16(command.ExecuteScalar());
+                }
+                connection.Close();
+                return nb;
+            }
+        }
+
+
+    
+    [WebMethod]
         public Boolean verifParticipant(String uneAdresse)
         {
             string connectionString = "server=localhost;database=gsb;user=root;password='';";

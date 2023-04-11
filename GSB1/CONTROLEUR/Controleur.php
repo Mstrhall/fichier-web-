@@ -26,6 +26,14 @@ function appelReserver(){
     // $idAct=$_GET['idAct'];
     require_once "VUE/reserver.php";
 }
+function appelChercheur(){
+    $nbrchercheur=countChercheur();
+    $chercheur= getChercheur();
+    // $idAct=$_GET['idAct'];
+    require_once "VUE/chercheur.php";
+}
+
+
 
 // Cette fonction permet de traiter le formulaire de participation à une activité
 function traitementParticipant(){

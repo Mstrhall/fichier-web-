@@ -135,3 +135,5 @@ C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\obj\Debug\Servic
 C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\obj\Debug\ServiceWebGsb.csproj.CopyComplete
 C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\obj\Debug\ServiceWebGsb.dll
 C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\obj\Debug\ServiceWebGsb.pdb
+C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\bin\MySql.Data.dll
+C:\wamp64\www\ProjetPhP\GSB1\MODELE\ServiceWebGsb\ServiceWebGsb\bin\System.Memory.dll

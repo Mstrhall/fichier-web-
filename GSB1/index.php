@@ -9,6 +9,8 @@ elseif ($_GET["action"]=="MENTION")
     appelMENTION();
 elseif($_GET["action"]=="MEDOC")
     appelMEDOC();
+elseif ($_GET["action"]=="chercheur")
+    appelChercheur();
 
 elseif($_GET["action"]=="ACTIVITE")
     appelACTIVITE();

@@ -19,6 +19,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php?action=MEDOC">Médicament</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?action=chercheur">chercheur</a>
+            </li>
         </ul>
     </div>
 </nav>
