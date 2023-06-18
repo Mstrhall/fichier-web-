@@ -43,13 +43,13 @@
 <!-- Slideshow contenant les images des brevets -->
 <div class="slideshow-container">
     <div class="mySlides fade">
+        <img src="VUE/dolipranes.jpeg" class="slide-img">
+    </div>
+    <div class="mySlides fade">
+        <img src="VUE/smecta.jpeg" class="slide-img">
+    </div>
+    <div class="mySlides fade">
         <img src="VUE/gelules.avif" class="slide-img">
-    </div>
-    <div class="mySlides fade">
-        <img src="VUE/medicament.avif" class="slide-img">
-    </div>
-    <div class="mySlides fade">
-        <img src="VUE/doli.avif" class="slide-img">
     </div>
 </div>
 <!-- Boutons pour changer de slide -->
